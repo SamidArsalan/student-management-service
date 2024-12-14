@@ -1,0 +1,1 @@
+# Student Management Service based on Hexagonal Architecture
