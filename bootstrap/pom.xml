@@ -9,17 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>student-bootstrap</artifactId>
+    <artifactId>student-management-api</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.samid</groupId>
-            <artifactId>project-domain</artifactId>
+            <artifactId>student-domain</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>org.samid</groupId>
-            <artifactId>project-infrastructure</artifactId>
+            <artifactId>student-infrastructure</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
@@ -47,6 +47,18 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>${start-class}</mainClass>
+                    <layout>JAR</layout>
+                </configuration>
             </plugin>
         </plugins>
     </build>

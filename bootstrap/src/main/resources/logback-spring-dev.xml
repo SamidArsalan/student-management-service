@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <!--*********************** VARIABLES **************************************************-->
+
+    <property name="host.name" value="${HOSTNAME}"/>
+    <property name="log.home" value="${logs.dir}"/>
+    <property name="my.interface.name" value="student-management-service"/>
+    <property name="log.file.name" value="${my.interface.name}"/>
+    <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>
+
+    <!--*********************** STDOUT APPENDER ********************************************-->
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                ${log.pattern}
+            </pattern>
+        </layout>
+    </appender>
+
+    <!--*********************** ROOT LOGGER ***********************************************-->
+
+    <logger name="com.samid" level="info" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="error">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
