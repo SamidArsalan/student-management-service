@@ -11,19 +11,15 @@
 
     <artifactId>student-management-api</artifactId>
 
-    <properties>
-        <swagger-annotation.version>2.2.15</swagger-annotation.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.samid</groupId>
-            <artifactId>student-domain</artifactId>
+            <artifactId>student-management-domain</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>org.samid</groupId>
-            <artifactId>student-infrastructure</artifactId>
+            <artifactId>student-management-infrastructure</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
