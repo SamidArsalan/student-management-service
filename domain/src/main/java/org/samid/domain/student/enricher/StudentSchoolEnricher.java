@@ -3,6 +3,7 @@ package org.samid.domain.student.enricher;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.samid.domain.common.enrich.Enricher;
+import org.samid.domain.school.School;
 import org.samid.domain.school.SchoolNotFoundException;
 import org.samid.domain.school.SchoolService;
 import org.samid.domain.student.Student;
@@ -25,8 +26,9 @@ public class StudentSchoolEnricher implements Enricher<Student> {
             if(school != null) {
                 student.setSchool(school);
             }
-        } catch (SchoolNotFoundException ignored) {
-
+        } catch (SchoolNotFoundException ex) {
+            log.warn("{}. Hence School will not be stored.", ex.getMessage(), ex);
+            student.setSchool(School.builder().build());
         }
 
         return student;

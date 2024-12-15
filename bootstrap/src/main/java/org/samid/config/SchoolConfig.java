@@ -4,6 +4,7 @@ import org.samid.domain.common.enrich.CompositeEnricher;
 import org.samid.domain.school.School;
 import org.samid.domain.school.SchoolProvider;
 import org.samid.domain.school.SchoolService;
+import org.samid.domain.school.enricher.SchoolEnricher;
 import org.samid.infrastructure.rest.remote.school.SchoolProviderAdapter;
 import org.samid.infrastructure.rest.remote.school.mapper.SchoolMapper;
 import org.springframework.context.annotation.Bean;
@@ -26,8 +27,13 @@ public class SchoolConfig {
     }
 
     @Bean
-    public CompositeEnricher<School> schoolCompositeEnricher() {
-        return new CompositeEnricher<>(List.of());
+    public CompositeEnricher<School> schoolCompositeEnricher(SchoolEnricher schoolEnricher) {
+        return new CompositeEnricher<>(List.of(schoolEnricher));
+    }
+
+    @Bean
+    public SchoolEnricher schoolEnricher() {
+        return new SchoolEnricher();
     }
 
 }

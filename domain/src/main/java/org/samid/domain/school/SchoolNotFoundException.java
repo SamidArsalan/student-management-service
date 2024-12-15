@@ -5,6 +5,6 @@ import static java.lang.String.format;
 public class SchoolNotFoundException extends RuntimeException {
 
     public SchoolNotFoundException(String name) {
-        super(format("School not found - %S", name));
+        super(format("School %S not found", name));
     }
 }
