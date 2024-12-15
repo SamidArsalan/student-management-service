@@ -20,5 +20,14 @@ spring:
     change-log: classpath:db.changelog-master.yaml
     enabled: true
 
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui
+    operations-sorter: method
+    tags-sorter: alpha
+    enabled: true
+
 logging:
   config: file:logback-spring-dev.xml

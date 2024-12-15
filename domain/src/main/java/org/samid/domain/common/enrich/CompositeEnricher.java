@@ -1,7 +1,10 @@
 package org.samid.domain.common.enrich;
 
+import lombok.AllArgsConstructor;
+
 import java.util.List;
 
+@AllArgsConstructor
 public class CompositeEnricher<T> implements Enricher<T> {
 
     private List<Enricher<T>> enrichers;

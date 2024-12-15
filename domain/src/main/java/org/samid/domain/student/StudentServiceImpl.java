@@ -10,10 +10,12 @@ public class StudentServiceImpl implements StudentService {
 
     private final UuidProvider uuidProvider;
     private final CompositeEnricher<Student> writeEnricher;
+    private final StudentRepository studentRepository;
 
     public Student createStudent(CreateStudentCommand command) {
         var student = command.toStudent(uuidProvider);
         student = writeEnricher.enrich(student);
+        student = studentRepository.save(student);
         return student;
     }
 

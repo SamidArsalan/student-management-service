@@ -49,6 +49,11 @@
             <artifactId>swagger-annotations</artifactId>
             <version>${swagger-annotation.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

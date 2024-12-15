@@ -7,7 +7,11 @@ import org.samid.domain.school.SchoolService;
 import org.samid.infrastructure.rest.remote.school.SchoolProviderAdapter;
 import org.samid.infrastructure.rest.remote.school.mapper.SchoolMapper;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+import java.util.List;
+
+@Configuration
 public class SchoolConfig {
 
     @Bean
@@ -19,6 +23,11 @@ public class SchoolConfig {
     @Bean
     public SchoolProvider schoolProvider(SchoolMapper schoolMapper) {
         return new SchoolProviderAdapter(schoolMapper);
+    }
+
+    @Bean
+    public CompositeEnricher<School> schoolCompositeEnricher() {
+        return new CompositeEnricher<>(List.of());
     }
 
 }

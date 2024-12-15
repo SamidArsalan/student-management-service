@@ -1,4 +1,6 @@
 package org.samid.infrastructure.rest.student.response;
 
-public record StudentSuccessResponse(String id) {
+import java.util.UUID;
+
+public record StudentSuccessResponse(UUID id) {
 }

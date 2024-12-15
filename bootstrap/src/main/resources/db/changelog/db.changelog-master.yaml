@@ -11,18 +11,18 @@
               "columns": [
                 {
                   "column": {
-                    "name": "id",
-                    "type": "BIGINT",
-                    "autoIncrement": true,
+                    "name": "student_id",
+                    "type": "uuid",
                     "constraints": {
-                      "primaryKey": true
+                      "primaryKey": true,
+                      "nullable": false
                     }
                   }
                 },
                 {
                   "column": {
-                    "name": "name",
-                    "type": "VARCHAR(255)",
+                    "name": "student_name",
+                    "type": "VARCHAR(100)",
                     "constraints": {
                       "nullable": false
                     }
@@ -30,8 +30,20 @@
                 },
                 {
                   "column": {
-                    "name": "age",
-                    "type": "INT"
+                    "name": "student_email",
+                    "type": "VARCHAR(100)"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "school",
+                    "type": "VARCHAR(100)"
+                  }
+                },
+                {
+                  "column": {
+                    "name": "on_boarding_date",
+                    "type": "date"
                   }
                 }
               ]
