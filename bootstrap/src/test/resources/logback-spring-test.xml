@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="true">
+
+    <!-- Set Properties -->
+    <property name="log.pattern" value="%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>
+
+    <!-- Console Appender -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>${log.pattern}</pattern>
+        </layout>
+    </appender>
+
+    <!-- Logger -->
+    <logger name="com.samid" level="info" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <!-- Root Logger -->
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
