@@ -7,7 +7,7 @@
     <property name="log.home" value="${logs.dir}"/>
     <property name="my.interface.name" value="student-management-service"/>
     <property name="log.file.name" value="${my.interface.name}"/>
-    <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>
+    <property name="log.pattern" value="%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>
 
     <!--*********************** STDOUT APPENDER ********************************************-->
 
